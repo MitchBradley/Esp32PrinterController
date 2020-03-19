@@ -3256,4 +3256,26 @@ F 8 "None" H 6100 2500 50  0001 L BNN "Field8"
 	1    6100 2500
 	1    0    0    -1  
 $EndComp
+Text Notes 850  3550 0    100  ~ 20
+R15 and R17 SWAPPED ON SILKSCREEN
+Text Notes 12150 700  0    100  ~ 20
+Move J110 farther from Pololu
+Text Notes 13600 3350 0    100  ~ 20
+Move C110 to other side of Pololu
+Text Notes 2850 2750 0    100  ~ 20
+C3 silkscreen outline too big
+Text Notes 2100 4750 0    100  ~ 20
+Make room for heatsinks on FETs
+Text Notes 650  1400 0    100  ~ 20
+J1 silkscreen +- swapped
+Text Notes 10750 3900 0    70   ~ 14
+139_E_DIR
+Text Notes 10750 4100 0    70   ~ 14
+141_E_EN
+Text Notes 800  8350 0    100  ~ 20
+Silkscreen labels for jumpers and stepper connectors
+Text Notes 4650 3800 0    100  ~ 20
+Voltage reference for thermistors TLVH431
+Text Notes 10550 4850 0    100  ~ 20
+Level shifter for MISO
 $EndSCHEMATC
