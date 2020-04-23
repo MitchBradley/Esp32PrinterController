@@ -12,3 +12,5 @@ This is based on https://github.com/felixstorm/Creality_Ender_3_ESP32_Board.git 
 - The fuse holders were spread out to make it easier to get your fingers in to grab the fuses.
 
 The design passes acceptance checks for the aisler.net entry level prototyping service.
+
+Update: The board is fully functional.  If you would like to build it, contact me and I will upload the revised version that fixes a few silkscreen errors and provides better clearance between some components that were a little crowded.
