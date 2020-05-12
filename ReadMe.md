@@ -14,3 +14,7 @@ This is based on https://github.com/felixstorm/Creality_Ender_3_ESP32_Board.git 
 The design passes acceptance checks for the aisler.net entry level prototyping service.
 
 Update: The board is fully functional.  If you would like to build it, contact me and I will upload the revised version that fixes a few silkscreen errors and provides better clearance between some components that were a little crowded.
+
+The board works with Marlin 2.0 for printer applications and with [Grbl_ESP32](https://github.com/bdring/Grbl_Esp32) for general CNC.
+
+![ESP32PrinterBoard](https://user-images.githubusercontent.com/4861133/81722069-964f5c80-941c-11ea-9717-9a32ae165790.jpg)
