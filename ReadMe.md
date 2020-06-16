@@ -15,6 +15,8 @@ The design passes acceptance checks for the aisler.net entry level prototyping s
 
 Update: The board is fully functional.  If you would like to build it, contact me and I will upload the revised version that fixes a few silkscreen errors and provides better clearance between some components that were a little crowded.
 
+*Yet another Update:  Do not use the fan outputs; they are broken.  If you connect a fan it is likely to blow up the ULN2803A chip.  The problem - which I inherited from the base design and neglected to check - is that you cannot put ULN2803A channels in parallel and get them to share current.  ULN2803A use bipolar junction transistors - BJTs.  BJTs have a positive temperature coefficient, which means that, as the temperature increases, the collector current also increases.  When you put them in parallel, if one of them starts drawing a little more current than its neighbor, it gets hotter, and starts drawing even more current.  This is called "thermal runaway". Instead of sharing the load, one will take it all, then overheat and blow out, then the neighbor will take all the current and blow out, etc.  It is possible to make current-sharing circuits with BJTs, but ULN2803A does not have that kind of circuit.  The solution to the problem is to replace the ULN2803A with MOSFETs like that one that controls the extruder temperature.*
+
 The board works with Marlin 2.0 for printer applications and with [Grbl_ESP32](https://github.com/bdring/Grbl_Esp32) for general CNC.
 
 ![ESP32PrinterBoard](https://user-images.githubusercontent.com/4861133/81722069-964f5c80-941c-11ea-9717-9a32ae165790.jpg)
