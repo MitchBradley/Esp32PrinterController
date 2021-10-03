@@ -132,7 +132,7 @@ Q137_X_STEP
 Text Label 10200 3800 0    50   ~ 0
 Q138_X_EN
 Text Label 10200 4100 0    50   ~ 0
-Q139_E_EN
+Q141_E_EN
 Text Label 10200 4000 0    50   ~ 0
 Q140_E_STEP
 Text Label 10200 4200 0    50   ~ 0
@@ -422,13 +422,13 @@ IO32_Z_MIN
 Text Notes 4750 5350 0    50   ~ 0
 Endstops
 Wire Notes Line
-	4700 3850 4700 5100
+	3550 3550 3550 5100
 Wire Notes Line
-	4700 5100 8250 5100
+	3550 5100 8250 5100
 Wire Notes Line
-	8250 5100 8250 3850
+	8250 5100 8250 3550
 Wire Notes Line
-	8250 3850 4700 3850
+	8250 3550 3550 3550
 Wire Notes Line
 	8250 5250 8250 6700
 Wire Notes Line
@@ -901,7 +901,7 @@ SD_CS
 Text Label 6900 2400 0    50   ~ 0
 SD_SCK
 Text Label 6900 2300 0    50   ~ 0
-SD_MISO
+ESP_MISO
 NoConn ~ 13300 1700
 NoConn ~ 10200 4500
 Wire Wire Line
@@ -1028,7 +1028,6 @@ NoConn ~ 7850 7550
 NoConn ~ 7350 7450
 NoConn ~ 7350 7550
 NoConn ~ 7350 7650
-NoConn ~ 7350 7750
 Text Label 5300 1700 2    50   ~ 0
 ~ESP32_EN
 Text Label 900  2050 0    50   ~ 0
@@ -1274,8 +1273,6 @@ $EndComp
 Wire Wire Line
 	1550 2750 1750 2750
 Wire Wire Line
-	2500 2750 2700 2750
-Wire Wire Line
 	1550 3050 1750 3050
 Wire Wire Line
 	2500 3050 2700 3050
@@ -1321,9 +1318,6 @@ $EndComp
 Connection ~ 1750 2750
 Wire Wire Line
 	1750 2750 1950 2750
-Connection ~ 2700 2750
-Wire Wire Line
-	2700 2750 2900 2750
 $Comp
 L Transistor_Array:ULN2803A U5
 U 1 1 5CFEC6A2
@@ -1430,7 +1424,7 @@ F 3 "" H 1850 7350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 10200 3900 0    50   ~ 0
-Q141_E_DIR
+Q139_E_DIR
 NoConn ~ 10200 3600
 Text Label 10200 2450 0    50   ~ 0
 Q135_X_DIR
@@ -1455,17 +1449,6 @@ Text Label 5650 4550 2    50   ~ 0
 I36_T_BED
 Text Label 7400 4550 2    50   ~ 0
 I39_T_NOZ
-$Comp
-L power:VCC #PWR0182
-U 1 1 5D012C9C
-P 4150 1900
-F 0 "#PWR0182" H 4150 1750 50  0001 C CNN
-F 1 "VCC" H 4167 2073 50  0000 C CNN
-F 2 "" H 4150 1900 50  0001 C CNN
-F 3 "" H 4150 1900 50  0001 C CNN
-	1    4150 1900
-	1    0    0    -1  
-$EndComp
 NoConn ~ 5500 7450
 NoConn ~ 5300 1700
 NoConn ~ 5000 7350
@@ -1549,7 +1532,6 @@ Text Label 6900 3000 0    50   ~ 0
 IO2_NOZZLE
 Text Label 6900 2800 0    50   ~ 0
 IO4_BED
-NoConn ~ 6900 2700
 Wire Wire Line
 	2350 4050 2050 4050
 Wire Wire Line
@@ -1768,32 +1750,10 @@ Text Label 11150 6900 2    50   ~ 0
 SD_SCK
 Text Label 12500 2800 2    50   ~ 0
 CS_X
-Text Label 11100 5000 2    50   ~ 0
+Text Label 9900 5450 0    50   ~ 0
 SD_MISO
-$Comp
-L Jumper:SolderJumper_2_Open JP7
-U 1 1 5EC724EF
-P 11300 5000
-F 0 "JP7" H 11300 5113 50  0000 C CNN
-F 1 "SolderJumper_2_Open" H 11300 5114 50  0001 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 11300 5000 50  0001 C CNN
-F 3 "~" H 11300 5000 50  0001 C CNN
-	1    11300 5000
-	1    0    0    -1  
-$EndComp
 Text Label 6900 3200 0    50   ~ 0
 CS_E
-$Comp
-L Jumper:Jumper_3_Open JP1
-U 1 1 5EC76A7B
-P 4150 2100
-F 0 "JP1" H 4150 2231 50  0000 C CNN
-F 1 "Jumper_3_Open" H 4150 2322 50  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P2.0mm_Open_TrianglePad1.0x1.5mm_NumberLabels" H 4150 2100 50  0001 C CNN
-F 3 "~" H 4150 2100 50  0001 C CNN
-	1    4150 2100
-	-1   0    0    1   
-$EndComp
 Text Label 3900 2100 2    50   ~ 0
 +5V
 $Comp
@@ -2300,8 +2260,6 @@ Text Label 10000 7650 0    50   ~ 0
 SD_CS
 Wire Wire Line
 	9800 1500 9800 1550
-Wire Wire Line
-	4150 1900 4150 1950
 NoConn ~ 9500 6450
 NoConn ~ 10000 6750
 NoConn ~ 10000 6850
@@ -2312,22 +2270,6 @@ NoConn ~ 10000 7250
 NoConn ~ 9200 6850
 NoConn ~ 9200 7150
 NoConn ~ 9200 7250
-$Comp
-L power:PWR_FLAG #FLG0101
-U 1 1 5D063946
-P 3850 1900
-F 0 "#FLG0101" H 3850 1975 50  0001 C CNN
-F 1 "PWR_FLAG" H 3850 2074 50  0000 C CNN
-F 2 "" H 3850 1900 50  0001 C CNN
-F 3 "~" H 3850 1900 50  0001 C CNN
-	1    3850 1900
-	1    0    0    -1  
-$EndComp
-Connection ~ 4150 1950
-Wire Wire Line
-	3850 1900 3850 1950
-Wire Wire Line
-	3850 1950 4150 1950
 Text Label 5300 3100 2    50   ~ 0
 CS_X
 Text Label 5300 3200 2    50   ~ 0
@@ -2429,17 +2371,6 @@ Text Label 13250 2300 2    50   ~ 0
 XYZ_MS1
 Text Label 13250 2400 2    50   ~ 0
 XYZ_MS2
-$Comp
-L Jumper:Jumper_3_Open JP25
-U 1 1 5FA1F826
-P 12700 2500
-F 0 "JP25" V 12700 2587 50  0000 L CNN
-F 1 "Jumper_3_Open" V 12655 2587 50  0001 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm_NumberLabels" H 12700 2500 50  0001 C CNN
-F 3 "~" H 12700 2500 50  0001 C CNN
-	1    12700 2500
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	12500 2800 12700 2800
 Wire Wire Line
@@ -2507,8 +2438,6 @@ Text Label 13250 5050 2    50   ~ 0
 XYZ_MS1
 Text Label 13250 5150 2    50   ~ 0
 XYZ_MS2
-Wire Wire Line
-	12850 5250 13300 5250
 Text Label 13250 5050 2    50   ~ 0
 XYZ_MS1
 Text Label 13250 5150 2    50   ~ 0
@@ -2561,24 +2490,20 @@ Wire Wire Line
 	12700 8400 12700 8350
 Wire Wire Line
 	12450 8400 12700 8400
-Wire Wire Line
-	11100 5000 11150 5000
-Wire Wire Line
-	11450 5000 11500 5000
-Text Label 11500 5000 0    50   ~ 0
-XYZ_MISO
+Text Label 9900 5550 0    50   ~ 0
+STEP_MISO
 Wire Wire Line
 	12950 1600 13300 1600
 Text Label 12950 1600 2    50   ~ 0
-XYZ_MISO
+STEP_MISO
 Wire Wire Line
 	12950 4350 13300 4350
 Text Label 12950 4350 2    50   ~ 0
-XYZ_MISO
+STEP_MISO
 Wire Wire Line
 	12950 7200 13300 7200
 Text Label 12950 7200 2    50   ~ 0
-XYZ_MISO
+STEP_MISO
 $Comp
 L this:Jumper_3_Open JP27
 U 1 1 5FEDEE0D
@@ -2612,19 +2537,6 @@ F 3 "~" H 11250 5700 50  0001 C CNN
 	1    11250 5700
 	0    -1   -1   0   
 $EndComp
-$Comp
-L this:Jumper_3_Open JP26
-U 1 1 5FEE09B1
-P 12700 5250
-F 0 "JP26" V 12700 5337 50  0000 L CNN
-F 1 "Jumper_3_Open" V 12655 5337 50  0001 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm_NumberLabels" H 12700 5250 50  0001 C CNN
-F 3 "~" H 12700 5250 50  0001 C CNN
-	1    12700 5250
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	12850 2500 13300 2500
 $Comp
 L this:Jumper_3_Open JP8
 U 1 1 5FEDE617
@@ -2771,7 +2683,7 @@ $EndComp
 Wire Wire Line
 	8250 9350 8400 9350
 Text Label 8250 9350 2    50   ~ 0
-SD_MISO
+STEP_MISO
 Text Label 8350 10500 2    50   ~ 0
 CS_E
 Wire Wire Line
@@ -2779,7 +2691,7 @@ Wire Wire Line
 Wire Wire Line
 	8700 9000 8900 9000
 Text Label 8700 9000 2    50   ~ 0
-Q141_E_DIR
+Q139_E_DIR
 Connection ~ 8900 9000
 Wire Wire Line
 	8900 8800 8900 9000
@@ -2886,7 +2798,7 @@ F 3 "~" H 10400 8750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 8700 8700 2    50   ~ 0
-Q139_E_EN
+Q141_E_EN
 $Comp
 L power:GND #PWR0200
 U 1 1 5EDC3C35
@@ -3007,105 +2919,6 @@ F 1 "DRIVER_E" H 9550 8650 50  0000 C CNN
 F 2 "Module:Pololu_Breakout-16_15.2x20.3mm" H 9725 9000 50  0001 L CNN
 F 3 "https://www.pololu.com/product/2980/pictures" H 9550 9450 50  0001 C CNN
 	1    9450 9750
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0112
-U 1 1 5FF480F7
-P 4850 5600
-F 0 "#PWR0112" H 4850 5450 50  0001 C CNN
-F 1 "+3V3" H 4865 5773 50  0000 C CNN
-F 2 "" H 4850 5600 50  0001 C CNN
-F 3 "" H 4850 5600 50  0001 C CNN
-	1    4850 5600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0113
-U 1 1 5FF6269B
-P 5950 5600
-F 0 "#PWR0113" H 5950 5450 50  0001 C CNN
-F 1 "+3V3" H 5965 5773 50  0000 C CNN
-F 2 "" H 5950 5600 50  0001 C CNN
-F 3 "" H 5950 5600 50  0001 C CNN
-	1    5950 5600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0116
-U 1 1 5FF62C78
-P 7050 5600
-F 0 "#PWR0116" H 7050 5450 50  0001 C CNN
-F 1 "+3V3" H 7065 5773 50  0000 C CNN
-F 2 "" H 7050 5600 50  0001 C CNN
-F 3 "" H 7050 5600 50  0001 C CNN
-	1    7050 5600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0118
-U 1 1 5FF63110
-P 6550 4250
-F 0 "#PWR0118" H 6550 4100 50  0001 C CNN
-F 1 "+3V3" H 6565 4423 50  0000 C CNN
-F 2 "" H 6550 4250 50  0001 C CNN
-F 3 "" H 6550 4250 50  0001 C CNN
-	1    6550 4250
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0119
-U 1 1 5FF6369D
-P 4800 4250
-F 0 "#PWR0119" H 4800 4100 50  0001 C CNN
-F 1 "+3V3" H 4815 4423 50  0000 C CNN
-F 2 "" H 4800 4250 50  0001 C CNN
-F 3 "" H 4800 4250 50  0001 C CNN
-	1    4800 4250
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0121
-U 1 1 5FF63B36
-P 9700 6450
-F 0 "#PWR0121" H 9700 6300 50  0001 C CNN
-F 1 "+3V3" H 9715 6623 50  0000 C CNN
-F 2 "" H 9700 6450 50  0001 C CNN
-F 3 "" H 9700 6450 50  0001 C CNN
-	1    9700 6450
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0126
-U 1 1 5FF65A96
-P 4400 2100
-F 0 "#PWR0126" H 4400 1950 50  0001 C CNN
-F 1 "+3V3" H 4415 2273 50  0000 C CNN
-F 2 "" H 4400 2100 50  0001 C CNN
-F 3 "" H 4400 2100 50  0001 C CNN
-	1    4400 2100
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR0128
-U 1 1 5FF661E8
-P 5300 1600
-F 0 "#PWR0128" H 5300 1450 50  0001 C CNN
-F 1 "+3V3" H 5315 1773 50  0000 C CNN
-F 2 "" H 5300 1600 50  0001 C CNN
-F 3 "" H 5300 1600 50  0001 C CNN
-	1    5300 1600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+3V3 #PWR010
-U 1 1 5FF80F43
-P 2700 2750
-F 0 "#PWR010" H 2700 2600 50  0001 C CNN
-F 1 "+3V3" H 2715 2923 50  0000 C CNN
-F 2 "" H 2700 2750 50  0001 C CNN
-F 3 "" H 2700 2750 50  0001 C CNN
-	1    2700 2750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -3256,26 +3069,254 @@ F 8 "None" H 6100 2500 50  0001 L BNN "Field8"
 	1    6100 2500
 	1    0    0    -1  
 $EndComp
-Text Notes 850  3550 0    100  ~ 20
-R15 and R17 SWAPPED ON SILKSCREEN
-Text Notes 12150 700  0    100  ~ 20
-Move J110 farther from Pololu
-Text Notes 13600 3350 0    100  ~ 20
-Move C110 to other side of Pololu
-Text Notes 2850 2750 0    100  ~ 20
+Text Notes 1000 3400 0    100  ~ 20
 C3 silkscreen outline too big
-Text Notes 2100 4750 0    100  ~ 20
-Make room for heatsinks on FETs
-Text Notes 650  1400 0    100  ~ 20
-J1 silkscreen +- swapped
-Text Notes 10750 3900 0    70   ~ 14
-139_E_DIR
-Text Notes 10750 4100 0    70   ~ 14
-141_E_EN
-Text Notes 800  8350 0    100  ~ 20
-Silkscreen labels for jumpers and stepper connectors
-Text Notes 4650 3800 0    100  ~ 20
-Voltage reference for thermistors TLVH431
-Text Notes 10550 4850 0    100  ~ 20
-Level shifter for MISO
+Wire Wire Line
+	9900 5550 9850 5550
+Wire Wire Line
+	9300 5500 9350 5500
+$Comp
+L Reference_Voltage:TL431LP U7
+U 1 1 5EDC1FC9
+P 4300 4550
+F 0 "U7" V 4346 4480 50  0000 R CNN
+F 1 "TL431LP" V 4255 4480 50  0000 R CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 4300 4400 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/tl431.pdf" H 4300 4550 50  0001 C CIN
+	1    4300 4550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5EDC4C70
+P 4300 3950
+F 0 "R3" H 4370 3996 50  0000 L CNN
+F 1 "470" H 4370 3905 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4230 3950 50  0001 C CNN
+F 3 "~" H 4300 3950 50  0001 C CNN
+	1    4300 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5EDC529D
+P 4000 4350
+F 0 "R1" H 4070 4396 50  0000 L CNN
+F 1 "16.5k 1%" H 3600 4300 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3930 4350 50  0001 C CNN
+F 3 "~" H 4000 4350 50  0001 C CNN
+	1    4000 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5EDC58F3
+P 4000 4750
+F 0 "R2" H 4070 4796 50  0000 L CNN
+F 1 "10k 1%" H 3650 4700 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3930 4750 50  0001 C CNN
+F 3 "~" H 4000 4750 50  0001 C CNN
+	1    4000 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 4500 4000 4550
+Wire Wire Line
+	4000 4550 4200 4550
+Wire Wire Line
+	4000 4600 4000 4550
+Connection ~ 4000 4550
+Wire Wire Line
+	4000 4200 4300 4200
+Wire Wire Line
+	4300 4200 4300 4100
+Wire Wire Line
+	4300 4450 4300 4200
+Connection ~ 4300 4200
+Wire Wire Line
+	4300 4650 4300 4900
+Wire Wire Line
+	4300 4900 4000 4900
+$Comp
+L power:GND #PWR012
+U 1 1 5EE49E04
+P 4300 4900
+F 0 "#PWR012" H 4300 4650 50  0001 C CNN
+F 1 "GND" H 4305 4727 50  0000 C CNN
+F 2 "" H 4300 4900 50  0001 C CNN
+F 3 "" H 4300 4900 50  0001 C CNN
+	1    4300 4900
+	1    0    0    -1  
+$EndComp
+Connection ~ 4300 4900
+$Comp
+L power:+5V #PWR011
+U 1 1 5EE4A1D7
+P 4300 3800
+F 0 "#PWR011" H 4300 3650 50  0001 C CNN
+F 1 "+5V" H 4315 3973 50  0000 C CNN
+F 2 "" H 4300 3800 50  0001 C CNN
+F 3 "" H 4300 3800 50  0001 C CNN
+	1    4300 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 4200 4800 4200
+Wire Wire Line
+	4800 4200 4800 4250
+Wire Wire Line
+	4800 4200 6550 4200
+Wire Wire Line
+	6550 4200 6550 4250
+Connection ~ 4800 4200
+Text Label 4400 4200 0    50   ~ 0
+3.3Vreg
+$Comp
+L power:GND #PWR0149
+U 1 1 5EF5D21E
+P 9500 5950
+F 0 "#PWR0149" H 9500 5700 50  0001 C CNN
+F 1 "GND" H 9505 5777 50  0000 C CNN
+F 2 "" H 9500 5950 50  0001 C CNN
+F 3 "" H 9500 5950 50  0001 C CNN
+	1    9500 5950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9500 5800 9500 5900
+$Comp
+L this:Jumper_3_Open JP26
+U 1 1 5EFB69B6
+P 12700 5250
+F 0 "JP26" V 12700 5337 50  0000 L CNN
+F 1 "Jumper_3_Open" V 12655 5337 50  0001 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm_NumberLabels" H 12700 5250 50  0001 C CNN
+F 3 "~" H 12700 5250 50  0001 C CNN
+	1    12700 5250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	12850 5250 13300 5250
+Wire Wire Line
+	12850 2500 13300 2500
+$Comp
+L this:Jumper_3_Open JP25
+U 1 1 5F047F6E
+P 12700 2500
+F 0 "JP25" V 12700 2587 50  0000 L CNN
+F 1 "Jumper_3_Open" V 12655 2587 50  0001 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm_NumberLabels" H 12700 2500 50  0001 C CNN
+F 3 "~" H 12700 2500 50  0001 C CNN
+	1    12700 2500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9850 5650 9900 5650
+Text Label 9900 5650 0    50   ~ 0
+SD_CS
+$Comp
+L this:74LVC2G157visVCC U8
+U 1 1 5F94D227
+P 9600 5600
+F 0 "U8" H 9850 5850 50  0000 C CNN
+F 1 "74LVC2G157" H 9400 5900 50  0000 C CNN
+F 2 "Package_SO:SSOP-8_2.95x2.8mm_P0.65mm" H 9600 5600 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 9600 5600 50  0001 C CNN
+	1    9600 5600
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9900 5450 9850 5450
+Text Label 9300 5500 2    50   ~ 0
+ESP_MISO
+Wire Wire Line
+	9600 5900 9500 5900
+Connection ~ 9500 5900
+Wire Wire Line
+	9500 5900 9500 5950
+NoConn ~ 9350 5700
+Text Label 9700 6300 2    50   ~ 0
++3V3
+Wire Wire Line
+	9700 6300 9700 6450
+Text Label 5300 1600 2    50   ~ 0
++3V3
+Wire Wire Line
+	2500 2750 2700 2750
+Wire Wire Line
+	2700 2750 2700 2700
+Connection ~ 2700 2750
+Wire Wire Line
+	2700 2750 2900 2750
+Text Label 2700 2700 0    50   ~ 0
++3V3
+Wire Wire Line
+	4850 5600 4850 5500
+Wire Wire Line
+	4850 5500 5950 5500
+Wire Wire Line
+	5950 5500 5950 5600
+Wire Wire Line
+	7050 5600 7050 5500
+Wire Wire Line
+	7050 5500 5950 5500
+Connection ~ 5950 5500
+Wire Wire Line
+	7050 5500 7250 5500
+Connection ~ 7050 5500
+Text Label 7250 5500 0    50   ~ 0
++3V3
+$Comp
+L this:Jumper_3_Open JP1
+U 1 1 5FCD1B92
+P 4150 2100
+F 0 "JP1" H 4200 1950 50  0000 L CNN
+F 1 "Jumper_3_Open" V 4105 2187 50  0001 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm_NumberLabels" H 4150 2100 50  0001 C CNN
+F 3 "~" H 4150 2100 50  0001 C CNN
+	1    4150 2100
+	-1   0    0    1   
+$EndComp
+Text Label 4450 2100 0    50   ~ 0
++3V3
+Wire Wire Line
+	4400 2100 4450 2100
+Wire Wire Line
+	9500 5400 9500 5200
+Text Label 9500 5200 0    50   ~ 0
++3V3
+$Comp
+L power:VCC #PWR?
+U 1 1 5FEE2A77
+P 4150 1950
+F 0 "#PWR?" H 4150 1800 50  0001 C CNN
+F 1 "VCC" H 4167 2123 50  0000 C CNN
+F 2 "" H 4150 1950 50  0001 C CNN
+F 3 "" H 4150 1950 50  0001 C CNN
+	1    4150 1950
+	1    0    0    -1  
+$EndComp
+Text Notes 5800 7450 0    50   ~ 0
+D4 used as SCK for ST7920 serial mode
+Text Notes 5650 7750 0    50   ~ 0
+EN used as data (SDI)
+Text Notes 3850 7650 0    50   ~ 0
+RS used as CS
+$Comp
+L power:GND #PWR?
+U 1 1 5E95C87D
+P 6800 7650
+F 0 "#PWR?" H 6800 7400 50  0001 C CNN
+F 1 "GND" H 6805 7477 50  0000 C CNN
+F 2 "" H 6800 7650 50  0001 C CNN
+F 3 "" H 6800 7650 50  0001 C CNN
+	1    6800 7650
+	1    0    0    -1  
+$EndComp
+Text Label 7350 7750 2    50   ~ 0
+IO16_BLSW
+Wire Wire Line
+	6800 7650 7350 7650
+Text Label 6900 2700 0    50   ~ 0
+IO16_BLSW
 $EndSCHEMATC
